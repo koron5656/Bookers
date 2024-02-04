@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'books/top'
+  post 'lists' => 'lists#create'
   get 'lists/new'
   get 'lists/index'
   get 'lists/show'
