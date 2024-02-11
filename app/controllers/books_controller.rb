@@ -5,6 +5,7 @@ class BooksController < ApplicationController
     book = Book.new(book_params)
     # 3. データをデータベースに保存するためのsaveメソッド実行
     book.save
+    flash[:notice] = "投稿に成功しました"
     # 4. トップ画面へリダイレクト
     redirect_to "/top"
   end
@@ -25,6 +26,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     @book.update(book_params)
+    flash[:notice] = "データ更新に成功しました"
     redirect_to book_path(@book.id)
   end
 
